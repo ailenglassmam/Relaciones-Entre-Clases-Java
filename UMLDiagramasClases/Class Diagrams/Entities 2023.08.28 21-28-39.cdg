@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Entities">
+  <ClassDiagramComponents>
+    <Class name="Baraja" package="Entities" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="mazo" type="ArrayList&lt;Carta&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ArrayList&lt;Carta&gt;" name="mazo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMazo" returnType="ArrayList&lt;Carta&gt;" visibility="public"/>
+        <Method name="setMazo" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Carta&gt;" name="mazo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Carta" package="Entities" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="numeroCarta" type="String" visibility="private"/>
+        <Field name="paloCarta" type="String" visibility="private"/>
+        <Field name="cartaUsada" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="numeroCarta"/>
+          <Argument type="String" name="paloCarta"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="numeroCarta"/>
+          <Argument type="String" name="paloCarta"/>
+          <Argument type="boolean" name="cartaUsada"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isCartaUsada" returnType="boolean" visibility="public"/>
+        <Method name="setCartaUsada" returnType="void" visibility="public">
+          <Argument type="boolean" name="cartaUsada"/>
+        </Method>
+        <Method name="getNumeroCarta" returnType="String" visibility="public"/>
+        <Method name="setNumeroCarta" returnType="void" visibility="public">
+          <Argument type="String" name="numeroCarta"/>
+        </Method>
+        <Method name="getPaloCarta" returnType="String" visibility="public"/>
+        <Method name="setPaloCarta" returnType="void" visibility="public">
+          <Argument type="String" name="paloCarta"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="mazo" source="Entities.Baraja" target="Entities.Carta" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Carta&gt;"/>
+    <UseRelation source="Entities.Baraja" target="Entities.Carta" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
